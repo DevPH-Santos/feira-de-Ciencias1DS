@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -23,19 +22,20 @@ main {
 
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
     background-color: whitesmoke;
-    box-shadow: 2px 10px 10px 0 rgba(117, 117, 117, 0.267);
+    box-shadow: 2px 10px 10px rgba(117, 117, 117, 0.267);
     padding: 20px 65px;
     z-index: 2;
 }
 
 nav a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
     padding: 5px;
     border-bottom: 1px solid transparent;
@@ -48,12 +48,12 @@ nav a:hover {
 }
 
 .conteudo {
+    display: flex;
     height: 100vh;
     padding: 0 150px;
+    margin: 0 auto;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    display: flex;
 }
 
 .conteudo img {
@@ -85,11 +85,11 @@ nav a:hover {
     padding: 10px 25px;
     border-radius: 9999px;
     width: 205px;
+    transition: 0.5s ease-in-out;
 }
 
 .left a:hover {
     width: 705px;
-    transition: 0.5s ease-in-out;
     background-color: #004854;
 }
 
@@ -103,28 +103,28 @@ nav a:hover {
 }
 
 .grid-container {
-    align-items: center;
-    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 157px;
+    align-items: center;
+    justify-content: center;
 }
 
 .card {
-    overflow-y: hidden;
     width: 366px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    flex-direction: column;
     background-color: white;
     border-radius: 15px;
     padding: 15px;
     transition: all 0.3s ease;
     text-decoration: none;
     color: #02849b;
-    box-shadow: 10px 15px 10px 0 rgba(1, 51, 59, 0.041);
     font-weight: bold;
+    box-shadow: 10px 15px 10px rgba(1, 51, 59, 0.041);
+    overflow-y: hidden;
 }
 
 .card img {
@@ -134,12 +134,14 @@ nav a:hover {
 .card p {
     opacity: 0;
     transform: translateY(20px);
+    margin-top: 10px;
+    font-size: 16px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
     transform: scale3d(1.05, 1.05, 1.05);
-    box-shadow: 15px 25px 15px 0 #0180963a;
+    box-shadow: 15px 25px 15px rgba(1, 128, 150, 0.23);
 }
 
 .card:hover p {
@@ -147,19 +149,14 @@ nav a:hover {
     transform: translateY(0);
 }
 
-.card p {
-    margin-top: 10px;
-    font-size: 16px;
-}
-
 #sobre-nos {
-    gap: 20px;
+    display: flex;
     height: 100vh;
+    width: 100%;
     padding: 0 130px;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    display: flex;
+    gap: 20px;
 }
 
 .turma_img {
@@ -175,10 +172,6 @@ nav a:hover {
     width: 650px;
 }
 
-.turma_img a img {
-    width: 20px;
-}
-
 .turma_img a {
     display: flex;
     align-items: center;
@@ -190,6 +183,10 @@ nav a:hover {
     border-radius: 9999px;
     width: 205px;
     transition: all 0.7s ease;
+}
+
+.turma_img a img {
+    width: 20px;
 }
 
 .turma_img a:hover {
@@ -214,7 +211,8 @@ nav a:hover {
     line-height: 200%;
 }
 
-/* ===== Responsividade: até 1400px ===== */
+
+/* Até 1400px */
 @media screen and (max-width: 1400px) {
     .conteudo {
         padding: 0 70px;
@@ -222,7 +220,6 @@ nav a:hover {
 
     .left {
         max-width: 65%;
-        gap: 50px;
     }
 
     .conteudo img {
@@ -242,8 +239,9 @@ nav a:hover {
     }
 }
 
-/* ===== Responsividade: até 1120px ===== */
+/* Até 1120px */
 @media screen and (max-width: 1120px) {
+
     .conteudo,
     #sobre-nos {
         padding: 0 35px;
@@ -271,12 +269,11 @@ nav a:hover {
     }
 
     .text p {
-        margin-left: 25px;
         line-height: 150%;
     }
 }
 
-/* ===== Responsividade: até 925px ===== */
+/* Até 925px */
 @media screen and (max-width: 925px) {
     .conteudo {
         flex-direction: column;
@@ -290,11 +287,13 @@ nav a:hover {
 
     #sobre-nos {
         flex-direction: column;
-        width: 100%;
     }
 
-    .text{
+    .text {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
 
     .turma_img {
